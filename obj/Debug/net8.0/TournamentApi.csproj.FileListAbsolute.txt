@@ -1,0 +1,8 @@
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.csproj.AssemblyReference.cache
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.AssemblyInfoInputs.cache
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.AssemblyInfo.cs
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.csproj.CoreCompileInputs.cache
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\niewi\Desktop\TournamentApi\TournamentApi\obj\Debug\net8.0\TournamentApi.sourcelink.json
