@@ -31,18 +31,15 @@ builder.Configuration.Bind("Jwt", jwtOpt);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        var key = builder.Services.BuildServiceProvider()
-            .GetRequiredService<Microsoft.Extensions.Options.IOptions<JwtOptions>>().Value;
-
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = key.Issuer,
-            ValidAudience = key.Audience,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key.Key)),
+            ValidIssuer = jwtOpt.Issuer,
+            ValidAudience = jwtOpt.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOpt.Key)),
             NameClaimType = "sub"
         };
     });
@@ -60,7 +57,6 @@ builder.Services
 
 var app = builder.Build();
 
-// DB init
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();

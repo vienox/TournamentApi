@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kLENu3ZWNnI=",
+  "dgSpecHash": "5oJZR5Rhd9Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\niewi\\Desktop\\TournamentApi\\TournamentApi\\TournamentApi.csproj",
   "expectedPackageFiles": [
@@ -60,12 +60,12 @@
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.0\\microsoft.extensions.objectpool.8.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.3\\microsoft.identitymodel.abstractions.7.0.3.nupkg.sha512",
-    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.3\\microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
-    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.3\\microsoft.identitymodel.logging.7.0.3.nupkg.sha512",
+    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.0.2\\microsoft.identitymodel.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.2\\microsoft.identitymodel.jsonwebtokens.8.0.2.nupkg.sha512",
+    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.logging\\8.0.2\\microsoft.identitymodel.logging.8.0.2.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.0.3\\microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.0.3\\microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",
-    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.3\\microsoft.identitymodel.tokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\niewi\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.2\\microsoft.identitymodel.tokens.8.0.2.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
@@ -81,7 +81,7 @@
     "C:\\Users\\niewi\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
-    "C:\\Users\\niewi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.3\\system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512",
+    "C:\\Users\\niewi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.2\\system.identitymodel.tokens.jwt.8.0.2.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\system.io.hashing\\7.0.0\\system.io.hashing.7.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
@@ -98,18 +98,5 @@
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
     "C:\\Users\\niewi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "projectPath": "C:\\Users\\niewi\\Desktop\\TournamentApi\\TournamentApi\\TournamentApi.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\niewi\\Desktop\\TournamentApi\\TournamentApi\\TournamentApi.csproj",
-      "libraryId": "System.IdentityModel.Tokens.Jwt",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
