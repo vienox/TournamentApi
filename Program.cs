@@ -13,11 +13,11 @@ builder.Services.Configure<JwtOptions>(opt =>
 {
     opt.Issuer = "TournamentApi";
     opt.Audience = "TournamentApi";
-    opt.Key = "secretkey123";
+    opt.Key = "secretkey123secretkey123secretkey123";
     opt.ExpMinutes = 120;
 });
 
-builder.Services.AddSingleton<JwtTokenService>();
+builder.Services.AddScoped<JwtTokenService>();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
@@ -26,8 +26,13 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 builder.Services.AddScoped<BracketService>();
 
-var jwtOpt = new JwtOptions();
-builder.Configuration.Bind("Jwt", jwtOpt); 
+var jwtOpt = new JwtOptions
+{
+    Issuer = "TournamentApi",
+    Audience = "TournamentApi",
+    Key = "secretkey123secretkey123secretkey123",
+    ExpMinutes = 120
+};
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -53,14 +58,15 @@ builder.Services
     .AddMutationType<Mutation>()
     .AddProjections()
     .AddFiltering()
-    .AddSorting();
+    .AddSorting()
+    .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
 
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    db.Database.EnsureCreated();
 }
 
 app.UseAuthentication();

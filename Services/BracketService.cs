@@ -78,7 +78,7 @@ public class BracketService
         if (match is null) throw new Exception("Match not found");
         if (match.WinnerId != null) throw new Exception("Match already has a winner");
         if (match.Player1Id != winnerUserId && match.Player2Id != winnerUserId)
-            throw new Exception("Winner must be Player1 or Player2");
+            throw new Exception($"Winner must be Player1 (ID: {match.Player1Id}) or Player2 (ID: {match.Player2Id}). Provided: {winnerUserId}");
 
         match.WinnerId = winnerUserId;
 

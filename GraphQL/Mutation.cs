@@ -76,10 +76,12 @@ public class Mutation
         ClaimsPrincipal principal,
         int tournamentId)
     {
-        var userId = int.Parse(principal.FindFirstValue("sub")!);
+        var userIdClaim = principal.FindFirstValue("sub") ?? principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userIdClaim)) throw new Exception("User not authenticated");
+        var userId = int.Parse(userIdClaim);
 
         var t = await db.Tournaments
-            .Include(x => x.Participants)
+            .Include(x => x.Participants).ThenInclude(tp => tp.User)
             .FirstOrDefaultAsync(x => x.Id == tournamentId);
 
         if (t is null) throw new Exception("Tournament not found");
@@ -120,18 +122,6 @@ public class Mutation
         [Service] BracketService bracketService,
         int tournamentId)
         => bracketService.GenerateBracketAsync(tournamentId);
-
-    [Authorize]
-    public async Task<List<Match>> GetMatchesForRound(
-        [Service] AppDbContext db,
-        [Service] BracketService bracketService,
-        int tournamentId,
-        int round)
-    {
-        var bracket = await db.Brackets.FirstOrDefaultAsync(b => b.TournamentId == tournamentId);
-        if (bracket is null) throw new Exception("Bracket not found");
-        return await bracketService.GetMatchesForRoundAsync(bracket.Id, round);
-    }
 
     [Authorize]
     public Task<Match> PlayMatch(

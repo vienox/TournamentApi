@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"mUU7uDOwtURKpboEMmTzZ7/wZkRC4k/0HrxdsVjDIf4=","Source":"TournamentApi","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "lp0kXyVXfcDAcZjkovmxm3VcNIN6GZQnyOoYUOfZpUE=",
+  "Source": "TournamentApi",
+  "BasePath": "_content/TournamentApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
