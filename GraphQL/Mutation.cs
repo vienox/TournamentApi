@@ -71,28 +71,29 @@ public class Mutation
     }
 
     [Authorize]
-    public async Task<Tournament> AddParticipant(
+    public async Task<TournamentParticipant> AddParticipant(
         [Service] AppDbContext db,
-        ClaimsPrincipal principal,
-        int tournamentId)
+        int tournamentId,
+        int userId)
     {
-        var userIdClaim = principal.FindFirstValue("sub") ?? principal.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (string.IsNullOrEmpty(userIdClaim)) throw new Exception("User not authenticated");
-        var userId = int.Parse(userIdClaim);
-
-        var t = await db.Tournaments
-            .Include(x => x.Participants).ThenInclude(tp => tp.User)
-            .FirstOrDefaultAsync(x => x.Id == tournamentId);
-
+        var t = await db.Tournaments.FirstOrDefaultAsync(x => x.Id == tournamentId);
         if (t is null) throw new Exception("Tournament not found");
         if (t.Status != "DRAFT") throw new Exception("Cannot join after start");
 
-        var exists = await db.TournamentParticipants.AnyAsync(tp => tp.TournamentId == tournamentId && tp.UserId == userId);
-        if (!exists)
-            db.TournamentParticipants.Add(new TournamentParticipant { TournamentId = tournamentId, UserId = userId });
+        var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        if (user is null) throw new Exception("User not found");
 
+        var exists = await db.TournamentParticipants.AnyAsync(tp => tp.TournamentId == tournamentId && tp.UserId == userId);
+        if (exists) throw new Exception("User already in tournament");
+
+        var participant = new TournamentParticipant { TournamentId = tournamentId, UserId = userId };
+        db.TournamentParticipants.Add(participant);
         await db.SaveChangesAsync();
-        return t;
+
+        return await db.TournamentParticipants
+            .Include(tp => tp.Tournament)
+            .Include(tp => tp.User)
+            .FirstAsync(tp => tp.TournamentId == tournamentId && tp.UserId == userId);
     }
 
     [Authorize]
